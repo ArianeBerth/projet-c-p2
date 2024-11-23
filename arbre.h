@@ -9,14 +9,17 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "moves.h"
+#include "map.h"
+
 typedef struct s_node
 {
-    int value;
-    int depth;
-    struct s_node **sons;
-    int nbSons; // taille physique du tableau
-    // more to come !
+    t_localisation loc;
+    t_move **availableMove;
+    int sizeAvailableMove;
+    t_map map;
+    int nbMoveRemaining;
+    t_move lastMove;
+    struct s_node *nextNode; //initialisé à NULL
 } t_node;
 
-t_node *createNode(int value, int nb_sons, int depth);
-
+t_node *createNode(t_localisation, t_move **, int, t_map, int, t_move);

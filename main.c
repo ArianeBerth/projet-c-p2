@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "map.h"
+#include "arbre.h"
 
 int main() {
     t_map map;
@@ -32,5 +33,7 @@ int main() {
         printf("\n");
     }
     displayMap(map);
+
+    //t_node newNode = createNode();
     return 0;
 }
