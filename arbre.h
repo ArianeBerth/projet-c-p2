@@ -14,7 +14,7 @@
 typedef struct s_node
 {
     t_localisation loc;
-    t_move **availableMove;
+    t_move *availableMove;
     int sizeAvailableMove;
     t_map map;
     int nbMoveRemaining;
@@ -22,4 +22,5 @@ typedef struct s_node
     struct s_node *nextNode; //initialisé à NULL
 } t_node;
 
-t_node *createNode(t_localisation, t_move **, int, t_map, int, t_move);
+t_node *createNode(t_localisation, t_move *, int, t_map, int, t_move);
+void sonNod(t_node *);
